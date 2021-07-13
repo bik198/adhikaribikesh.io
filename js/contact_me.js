@@ -19,8 +19,9 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      console.log("bikesh");
       $.ajax({
-        url: "././mail/contact_me.php",
+        // url: "././mail/contact_me.php",
         type: "POST",
         data: {
           name: name,
@@ -35,7 +36,7 @@ $(function() {
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
           $('#success > .alert-success')
-            .append("<strong>Your message has been sent. </strong>");
+            .append("<strong>Your message has been sent </strong>");
           $('#success > .alert-success')
             .append('</div>');
           //clear all fields
@@ -57,6 +58,7 @@ $(function() {
           }, 1000);
         }
       });
+
     },
     filter: function() {
       return $(this).is(":visible");
